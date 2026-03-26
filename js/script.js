@@ -28,14 +28,31 @@ document.addEventListener("DOMContentLoaded" , ()=> {
     //스크롤 이벤트 발생부분
     window.addEventListener('scroll' , ()=> {
       const header = document.querySelector('header');
+      const footer = document.querySelector('footer');
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
+      //스크롤 최상단 부분 이벤트 처리
       if (scrollTop > 50) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-      
+
+      //스크롤 최하단 부분 이벤트 처리
+      // 전체 문서 높이(scrollHeight) === 현재 위치(scrollTop) + 보이는 화면 높이(clientHeight)
+      const scrollHeight = document.documentElement.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight;
+
+      // 바닥에 거의 다 닿았을 경우에 처리
+
+      if (scrollTop + clientHeight >= scrollHeight - 5) {
+        footer.classList.add('active');
+      } else {
+        footer.classList.remove('active');
+      }
+
+
+
       //초기 위치 [Home]
       let activeIndex = 0;
 
