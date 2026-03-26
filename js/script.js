@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded" , ()=> {
     });    
 
     //#About의 <progress> 스킬바 동작 시작 위치 값
-    const skillTop = document.querySelector("#About>div:last-child").offsetTop-300;
+    const skillTop = document.querySelector("#About > div:last-of-type").offsetTop-300;
 
     //상단 메뉴의 링크id명과 영역 윗쪽 높이
     const sections = [
@@ -238,5 +238,40 @@ document.addEventListener("DOMContentLoaded" , ()=> {
     });
   });
 
+  //Contact(문의하기) 영역
+  const form = document.getElementById('form');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const originalText = submitBtn.textContent;
+
+      submitBtn.textContent = "Sending...";
+      submitBtn.disabled = true;
+
+      try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: formData
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+              alert("메세지가 정상적으로 전송되었습니다. 감사합니다!");
+              form.reset();
+          } else {
+              alert("Error: " + data.message);
+          }
+
+      } catch (error) {
+          alert("Something went wrong. Please try again.");
+      } finally {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+      }
+  });
 
 });//js 끝!!

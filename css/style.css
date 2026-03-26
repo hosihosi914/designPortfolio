@@ -26,7 +26,7 @@ h2 {
 /* 슬라이드 버튼(공통)*/
 button.slideButton {
     width:20px; height:20px; border-radius: 50%;
-    border:none; background:#57a3e0; 
+    border:none; background: #f7de54; 
     transition: 0.5s;
 }
 button.slideButton.active  {
@@ -104,12 +104,30 @@ header button.material-symbols-outlined {
 }
 #About h2 {
     color:white; font-weight: 400; font-size:1.3rem;
+    display: block;
     width:fit-content; margin:auto;
+    transform: translateY(-180px);
+    /* border: 1px solid red; */
 }
+
+#About> div:first-child {
+    /* border: 1px solid red; */
+    display: flex; justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
 #About> div:first-child div {   
-    width:fit-content; margin:auto;  padding:30vh 0;
-    font-size:2rem; font-weight: 500;
+    width:fit-content; margin:auto; /* border: 1px solid red; */
+    font-size:2rem; font-weight: 500; transform: translateY(-220px);
 }
+
+#About>div:first-child p {
+    /* border: 1px solid red; */
+    transform: translateY(-120px);
+}
+
+
 #About strong {
     color:white; display: block;
 }
@@ -187,7 +205,7 @@ header button.material-symbols-outlined {
    background:#beafb4; 
 }
 #About progress::-webkit-progress-value {
-    background:linear-gradient(to right,  #4c7fb1,#825ca7);
+    background:linear-gradient(to right,  #e2d795,#825ca7);
 }
 #About .right span {   
     font-weight:500; font-size:1.05rem;
@@ -308,7 +326,7 @@ header button.material-symbols-outlined {
     color:#825ba7; cursor:pointer;
 }
 #Gallery nav button.active , #Gallery nav button:hover {
-    background:#825ba7; color:white;
+    background:#825ba7; color:#f7de54;
 }
 
 #Gallery nav+ div {
@@ -385,13 +403,20 @@ header button.material-symbols-outlined {
 #Contact textarea::placeholder {
     padding-top: 55px;
 }
-#Contact button {
+#Contact form button {
+    transition: all 0.3s ease;
     width:500px; max-width: 100%;
     background: #595959;
     color:white; font-weight: 500;
     padding:15px; border-radius:5px;
     border:none; margin-top: 20px;
 }
+
+#Contact form button:hover{
+    color: #f7de54;
+    box-shadow: 0 0 20px #f7df5471;
+}
+
 #Contact form+div {
     background: white;
     padding: 50px 0; margin-top:100px;

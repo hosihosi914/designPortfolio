@@ -386,18 +386,19 @@
     <section id="Contact">
         <h2>Contact us</h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
-            Perferendis, odio veritatis ea blanditiis quia eveniet qui fuga.<br>
-            Itaque odit quae exercitationem similique culpa ipsa reiciendis illo fugit deleniti, quasi est!
+            제 포트폴리오 페이지를 방문해주셔서 감사합니다.<br>
+            문의사항이 있으실 경우, 아래에 있는 폼에 내용 작성해서 전송을 부탁드립니다.<br>
+            확인하는대로 바로 연락드리도록 하겠습니다. 
         </p>
-        <form>
-            <label for="name">이름 / 업체명</label>
-            <input type="text" id="name" placeholder="이름을 작성해주세요.">
+        <form id="form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="5023e6b9-4b02-4e5e-bcf3-e90c397a35e0">
+            <label for="username">성함</label>
+            <input type="text" id="username" name="name" placeholder="이름을 작성해주세요." required>          
             <label for="tel">연락처</label>
-            <input type="text" id="tel" placeholder="연락처를 작성해주세요.">
+            <input type="tel" id="tel" name="phone" placeholder="연락처를 작성해주세요.">
             <label for="message">메세지 내용</label>
-            <textarea id="message" placeholder="메세지를 작성해주세요"></textarea>
-            <button>Send it!</button>
+            <textarea id="message" name="message" placeholder="메세지를 작성해주세요" required></textarea>
+            <button type="submit">Send it!</button>
         </form>
         <div>
             <div>
