@@ -75,8 +75,8 @@ header button.material-symbols-outlined {
     width: 100%;
     height: 100vh;
     /* 배경은 호시가 정한 GIF 그대로냥! */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('../images/homeBackground.gif') no-repeat center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../images/videoCoding.gif') no-repeat center/cover;
     
     /* 📍 핵심: 텍스트를 화면 정가운데로 모으기 */
     display: flex;
@@ -87,7 +87,7 @@ header button.material-symbols-outlined {
 }
 
 #Home h1 {
-    font: 400 4.5rem "Roboto", sans-serif;
+    font: 400 4rem "Roboto", sans-serif;
     text-align: center;
     margin: 0; /* 마진 때문에 밀리지 않게 0으로! */
     color: #fff;
@@ -135,7 +135,7 @@ header button.material-symbols-outlined {
     min-height:100vh; padding-top: 150px;
 }
 #About h2 {
-    color:white; font-weight: 400; font-size:1.3rem;
+    color:white; font-weight: 600; font-size:1.8rem;
     display: block;
     width:fit-content; margin:auto;
     transform: translateY(-180px);
@@ -151,12 +151,13 @@ header button.material-symbols-outlined {
 
 #About> div:first-child div {   
     width:fit-content; margin:auto; /* border: 1px solid red; */
-    font-size:2rem; font-weight: 500; transform: translateY(-260px);
+    font-size:3rem; font-weight: 700; transform: translateY(-250px);
+    text-align: center;
 }
 
 #About>div:first-child p {
     /* border: 1px solid red; */
-    transform: translateY(-120px);
+    transform: translateY(-100px);
 }
 
 
@@ -169,6 +170,7 @@ header button.material-symbols-outlined {
 #About p {
     color:white; text-align: center;     
 }
+
 #About> div:last-child {
     max-width:1100px; margin:auto;  padding:120px 0;
     display:flex; justify-content: space-between;
@@ -179,6 +181,12 @@ header button.material-symbols-outlined {
 }
 #About img {
     max-width:180px; margin:40px 0;
+}
+
+#About .aboutUl_left{
+    border-left: 3px solid #825ba7;
+    padding: 0 15px;
+    line-height: 160%;
 }
 
 #About ul {
@@ -267,14 +275,16 @@ header button.material-symbols-outlined {
     border-radius:20px;
 }
 #slide section div {
-    width:160px; height:160px;
+    display: flex; justify-content: center; align-items: center;
+    width:130px; height:130px;
     border-radius: 50%; overflow: hidden;
     border: 8px solid #825ba7;  
     margin:auto;  
 }
 #slide img {
     background:white;
-    width:300px; height:300px;
+    border-radius: 100%;
+    width: 60%; height:60%;
 }
 #slide h4 {
     padding:20px 0; font-size:1.3rem;
@@ -282,6 +292,10 @@ header button.material-symbols-outlined {
 }
 #slide p {
     color:#555;
+}
+
+#slide p strong{
+    font-weight: bold; color: #825ba7;
 }
 
 #slide_bar {
@@ -450,7 +464,6 @@ header button.material-symbols-outlined {
     border:none; width:500px; max-width: 100%;
     padding: 10px 0;
     margin-bottom: 30px;
-
     border: none;
     border-bottom: 2px solid #6b149b; /* 기존 보라색 선 */
     font-size: 16px;
@@ -476,15 +489,16 @@ header button.material-symbols-outlined {
 #Contact form button {
     transition: all 0.3s ease;
     width:500px; max-width: 100%;
-    background: #595959;
+    background: #6a458d;
     color:white; font-weight: 500;
     padding:15px; border-radius:5px;
     border:none; margin-top: 20px;
 }
 
 #Contact form button:hover{
+    background: #825ba7;
     color: #f7de54;
-    box-shadow: 0 0 20px #f7df5471;
+    box-shadow: 0 0 10px #f7df5438;
 }
 
 #Contact form+div {
@@ -545,6 +559,14 @@ footer div {
 footer div p {
     font-size: 0.85rem;
     text-align: right;
+}
+
+footer img{
+    opacity: 0.7;
+}
+
+footer p strong{
+    color: #f7df54ad; font-weight: bold;
 }
 
 /*************** 작은기계장치(아이패드미니:0 ~ 768px ) ***************/

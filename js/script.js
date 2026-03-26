@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded" , ()=> {
 
     // 첫 번째 타자 효과: #Home strong
     const strongEl = document.querySelector('#Home strong');
-    const text1 = 'Hello, World!';
+    const text1 = 'Designing Value for Tomorrow';
     let i = 0;
 
     const typing_1 = () => {
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded" , ()=> {
 
     // 두 번째 타자 효과: #Home b
     const bEl = document.querySelector('#Home b');
-    const htmlString = 'I am { <span>Lorem ipsum</span> }';
+    const htmlString = 'I am <span>Web Specialist</span>';
 
     // HTML 문자열을 DOM 노드로 파싱
     const $b = document.createElement('b');
