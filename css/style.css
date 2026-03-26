@@ -1,0 +1,561 @@
+@charset "utf-8";
+
+* {
+    margin:0; padding:0; box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+::-webkit-scrollbar {width:0;}
+html {
+    scroll-behavior: smooth;
+}
+body {
+        height:400vh;
+}
+
+img {
+    display: block; max-width: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+h2 {
+    color:#825ba7; text-align: center;
+    font-size:2rem; padding-bottom: 80px;
+}
+/* 슬라이드 버튼(공통)*/
+button.slideButton {
+    width:20px; height:20px; border-radius: 50%;
+    border:none; background:#57a3e0; 
+    transition: 0.5s;
+}
+button.slideButton.active  {
+    width:100px; background: #825ba7;
+    border-radius: 20px;
+}
+
+/* 상단 */
+header {
+    background:#8d65d3; padding:11px 0;
+    font-weight:300;
+    position:fixed; z-index: 1;
+    top:0; left:0; width:100%;
+}
+header div {
+    max-width:1400px; margin:auto; 
+    display: flex; justify-content: space-between;
+    align-items: center; padding:0 10px 0 20px;
+}
+header nav a {
+    color:white; margin:0 5px; padding:8px 20px; display:inline-block;
+}
+header nav a:last-child {
+    margin:0;
+}
+header nav a.active , header nav a:hover {
+    background:#a351d3; border-radius:50px;
+    font-weight: 400;  color: #fff3cb; font-weight: bold;
+    box-shadow: 0 0 20px #f8efc981;
+}
+header button.material-symbols-outlined {
+    display: none;
+}
+
+
+/* 홈화면 */
+#Home {
+    background: url(../images/bg-1.jpg) no-repeat fixed center center / cover;
+    min-height:100vh; color:white;
+    padding-top:35vh;    
+}
+#Home h1 {
+    font:400 4.5rem "Roboto", sans-serif;
+    text-align: center;
+}
+#Home h1 b.active  {
+    display:block;
+    background:rgba(101, 50, 130, 0.7); padding:8px 70px;
+    width:fit-content; margin:20px auto 50px;
+    border-radius:20px;
+}
+#Home h1 span {
+    color:#f7de54;
+}
+#Home a {
+    display: block; width: fit-content; 
+    margin:auto; margin-top:20vh;
+    animation:swipe 1s infinite alternate both;    
+}
+@keyframes swipe {
+    from {transform:translateY(-10px);}
+    to   {transform:translateY(10px);}
+}
+#Home a img {
+    max-width:150px;
+}
+
+/*About */
+#About {
+    background:#dad1e3; overflow: hidden;
+}
+#About> div:first-child {
+    background: url('../images/bg-2.png') no-repeat center center / cover;
+    min-height:100vh; padding-top: 150px;
+}
+#About h2 {
+    color:white; font-weight: 400; font-size:1.3rem;
+    width:fit-content; margin:auto;
+}
+#About> div:first-child div {   
+    width:fit-content; margin:auto;  padding:30vh 0;
+    font-size:2rem; font-weight: 500;
+}
+#About strong {
+    color:white; display: block;
+}
+#About strong + b {
+    color:#f7de54;
+}
+#About p {
+    color:white; text-align: center;     
+}
+#About> div:last-child {
+    max-width:1100px; margin:auto;  padding:120px 0;
+    display:flex; justify-content: space-between;
+}
+
+#About b {
+    color:#825ba7; padding: 0px 5px;
+}
+#About img {
+    max-width:180px; margin:40px 0;
+}
+
+#About ul {
+    list-style: none; color:#464646;
+    line-height: 130%;
+}
+#About li {
+    display:flex; align-items: center; flex-wrap:wrap;
+}
+
+#About ul+div {
+    padding-top: 70px;
+}
+#About a {
+    display: inline-block; margin:20px 5px;
+    color:white; font-weight: 500;
+    padding:12px 30px; background:#825ba7;
+    border-radius:50px; font-size:1.1rem;
+}
+#About a:last-child {
+    background:white; box-shadow:2px 3px 2px #825ba7;
+}
+
+#About .left {flex:1;}
+#About .right {
+    padding:50px 0 0 ; flex:1;
+}
+#About .right ul {
+    display:flex; flex-direction: column;
+    line-height: 500%; 
+}
+
+
+#About label {    
+    color:#5b1140; font-weight:500; width:120px; display:inline-block;
+    width:120px;
+}
+#About progress {
+    height:23px; margin-right:10px;
+    -webkit-appearance:none; appearance:none;
+    border-radius:50px; overflow: hidden; border:none;
+    flex:5;
+}
+#About progress::-webkit-progress-bar {
+   background:#beafb4; 
+}
+#About progress::-webkit-progress-value {
+    background:linear-gradient(to right,  #4c7fb1,#825ca7);
+}
+#About .right span {   
+    font-weight:500; font-size:1.05rem;
+    flex:0.6;
+}
+
+/* What Can I Do? */
+#what {
+    background: #ede6f4; padding:100px 0;
+}
+#what> div {
+    max-width: 1400px; margin:auto; overflow: hidden;
+}
+
+#slide {
+    width:2800px; display:flex; position: relative;
+    left:-1400px;
+}
+#slide> div {
+    width:1400px; display: flex;
+}
+#slide section {
+    width:300px; margin:0 25px; 
+    background:#e5daf0;
+
+    padding:40px 15px; text-align: center;
+    border-radius:20px;
+}
+#slide section div {
+    width:160px; height:160px;
+    border-radius: 50%; overflow: hidden;
+    border: 8px solid #825ba7;  
+    margin:auto;  
+}
+#slide img {
+    background:white;
+    width:300px; height:300px;
+}
+#slide h4 {
+    padding:20px 0; font-size:1.3rem;
+    color:#333;
+}
+#slide p {
+    color:#555;
+}
+
+#slide_bar {
+    width:140px; margin:auto; padding-top: 80px;
+    display: flex; justify-content: space-between;   
+}
+
+
+/* MarkUp */
+#MarkUp {
+    padding:100px 0;
+}
+#MarkUp> div {
+    width: 700px; margin:auto; 
+    text-align: center; overflow: hidden;
+}
+
+#slide-1 {
+    width:2800px; display: flex; 
+    position: relative; left:0;
+    transition:left 0.5s;
+}
+#slide-1 section {
+    width:700px;
+}
+#slide-1 img {
+    margin:auto; transform: translateX(30px);
+}
+#slide-1 h3 {
+    color:#825ba7; font-size:1.5rem;
+    padding:30px 0;
+}
+#slide-1 span {
+    border:0.3pt solid #777; padding:5px 30px;
+    border-radius:30px;  color:#444;
+}
+#slide-1 span:not(:last-child) {
+    margin-right:20px;
+}
+#slide-1 p{
+    max-width:450px; margin:auto;
+    color:#444; padding:30px 0;
+}
+#slide-1 a {
+    background: #825ba7; color:white; padding:7px 23px 10px;
+    border-radius:30px; display: inline-block;
+}
+#slide-1 a:not(:last-child) {
+    margin-right:10px;
+}
+
+#slide_bar_1 {
+    max-width: 190px; margin:auto; margin-top:50px;
+    display: flex;
+}
+#slide_bar_1 button {
+    cursor: pointer;
+}
+#slide_bar_1 button:not(:last-child ) {
+    margin-right:10px;
+}
+
+/* Gallery */
+#Gallery {
+    background: #f1f1f1;
+    padding:100px 0;
+}
+#Gallery nav {
+    max-width:870px;  margin:auto; display:flex;
+}
+#Gallery nav button {
+    flex:1; border:1px solid #825ba7; padding:20px; 
+    text-align: center; font-weight: 500; font-size:1.2rem;
+    color:#825ba7; cursor:pointer;
+}
+#Gallery nav button.active , #Gallery nav button:hover {
+    background:#825ba7; color:white;
+}
+
+#Gallery nav+ div {
+    max-width:1100px; margin:auto; margin-top:80px;
+    overflow: hidden; 
+}
+
+#Gallery .G_box {
+    display: none;  overflow: hidden;
+}
+#Gallery .G_box.active{
+    display: block; 
+}
+
+#Gallery .slide {
+    width:3300px; display:flex;
+    position: relative; left:0; 
+    transition: left 0.5s;
+}
+#Gallery .slide> div {
+    display: flex; flex-wrap: wrap; justify-content: center;
+}
+#Gallery .slide div div {
+    width:250px;  height:250px; background:#e2e2e2; margin:10px;
+    border-radius:30px;
+}
+#Gallery .G_slide_bar{
+    max-width: 190px; margin:auto; margin-top:50px;
+    display: flex;  
+}
+#Gallery .G_slide_bar button {
+    cursor:pointer;
+}
+#Gallery .G_slide_bar button:not(:last-child ) {
+    margin-right:10px;
+}
+
+/* 하단에 있는 지도(구글맵) */
+#map h2 {display: none;}
+#map iframe {
+    width:100%; height:500px; border:none;
+}
+
+/* Contact us */
+#Contact {
+    background: #b1abcd; padding:150px 0 0;
+    text-align: center;
+}
+#Contact h2+p {
+    color:#716f70; font-weight: 500; font-size:1.1rem;
+    padding-bottom:50px;
+}
+#Contact form {
+    background: #8e79a2;
+    padding-bottom:30px;
+}
+#Contact form * {
+    display: block; margin:auto;
+}
+#Contact label {
+    padding:20px 0 10px; color:white; font-weight: 500;
+}
+#Contact input, #Contact textarea {
+    background: #e0dce4; border-radius:5px;
+    border:none; width:500px; max-width: 100%;
+    padding: 10px;
+}
+#Contact ::placeholder {
+    text-align: center;
+}
+#Contact textarea {
+    height:150px;
+}
+#Contact textarea::placeholder {
+    padding-top: 55px;
+}
+#Contact button {
+    width:500px; max-width: 100%;
+    background: #595959;
+    color:white; font-weight: 500;
+    padding:15px; border-radius:5px;
+    border:none; margin-top: 20px;
+}
+#Contact form+div {
+    background: white;
+    padding: 50px 0; margin-top:100px;
+}
+#Contact div div {
+    max-width: 700px; margin:auto;
+    display: flex; text-align: center; 
+    
+}
+
+#Contact section:first-child {
+    margin-right:80px;
+}
+#Contact h3 {
+    color:#825ba7;
+}
+#Contact img {
+    margin:20px auto; width:80px;
+}
+#Contact h3~p {
+    font-size:0.9rem; color:#666;
+    line-height: 140%;
+}
+
+/* 하단(footer) */
+footer {
+    background: #b1abcd; padding:30px 0;
+}
+footer div {
+    max-width: 800px; margin: auto;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color:#777; font-size: 0.85rem;
+}
+footer img {
+    width:120px; opacity: 0.6;
+}
+
+/*************** 작은기계장치(아이패드미니:0 ~ 768px ) ***************/
+@media(max-width:768px ){
+    header div {
+        padding:0 10px;
+    }
+    /* 구글심볼(햄버거 아이콘) */
+    header button.material-symbols-outlined{
+        display:block; background: none; border:none;
+        color:white;
+    }
+    /* 왼쪽에서 밀고 들어오는 내비게이션 영역 */
+    header nav {
+        background:black;
+        position: absolute; width:100%; max-width:300px;
+        height:100vh; 
+        top:46px; left:0; padding-top:10vh;
+        box-shadow: 5px 4px 5px rgba(255,255,255, 0.5);
+        left:-350px;
+        transition: left 0.5s;
+    }
+    header nav a {
+        display: block; width:fit-content; margin:20px auto;
+    }
+    header nav a:last-child {
+        margin:auto;
+    }
+    #Home {
+         padding-top:20vh;
+    }
+    #Home h1 {
+        font-size:2.5rem;
+    }
+    #Home h1 b.active {
+        background: none;
+    }
+    /*마우스아이콘 애니*/
+    #Home a {
+        margin-top:15vh;
+    }
+    #Home a img {
+        max-width:100px;
+    }
+    /*About Progress (스킬부분)*/
+     #About>div:first-child {
+        padding:150px 10px 30px 10px;
+        text-align:center;
+     }
+    #About>div:last-child {
+        flex-direction: column;
+    }
+    #About .left {
+        text-align: center; margin:auto; 
+    } 
+    #About>div:last-child img {
+        margin:40px auto;
+    }
+	#About .right {
+		line-height:100%;
+	}
+    #About .right ul {
+        width:95%; margin:auto; line-height:200%;
+    }
+    #About li {
+        justify-content: center; padding-bottom:20px;
+    }
+	#About a {
+		padding:10px 30px; 
+	}
+    #About label {
+         width: 100%;
+    }	
+	
+	#what> div {
+		overflow-x: auto;
+	}
+	
+	#MarkUp> div {
+		width: 100vw;
+	}
+	#slide-1 {
+		width:400vw;
+	}
+	#slide-1 h3 {
+		transform: translateX(-20px);
+	}
+	#slide-1 section {
+		width:100vw; padding:0 10px;
+	}
+	#slide-1 img {		
+		transform: translateX(0px);
+	}
+	#slide-1 span {
+		padding:5px 20px;
+	}
+	#slide-1 span:not(:last-child) {
+		margin-right:7px;
+	}
+	#slide-1 a {
+		padding:7px 11px 9px; margin-bottom:5px;
+		font-size:0.7rem;
+	}
+	#slide-1 a:not(:last-child) {
+		margin-right:2px;
+	}
+    #Gallery nav button {
+       padding:10px 8px;font-size:1rem;
+    }
+    #Gallery .G_box {
+        overflow-x: auto; padding-bottom:50px;
+    }
+    #Gallery .G_slide_bar {       
+        position:absolute; left:calc((100% - 190px ) / 2);
+    }
+
+    #Contact> p, #Contact form {
+        padding:0 10px;
+    }
+    #Contact form {
+        padding-bottom: 30px;
+    }
+    #Contact div div {
+        flex-direction: column;
+        padding:0 10px;
+    }
+    #Contact section:first-child {
+        margin:0;
+    }
+    #Contact h3:last-of-type {
+        padding-top:50px;
+    }
+
+    footer div {
+        padding:0 10px;
+        flex-direction: column;
+    }
+    footer img{
+        margin-bottom: 20px;
+    }
+}
