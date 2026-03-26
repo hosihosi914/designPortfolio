@@ -36,11 +36,19 @@ button.slideButton.active  {
 
 /* 상단 */
 header {
-    background:#8d65d3; padding:11px 0;
+    background: rgba(141, 101, 211, 0.5); 
+    padding:11px 0;
     font-weight:300;
-    position:fixed; z-index: 1;
+    position:fixed; z-index: 100;
     top:0; left:0; width:100%;
+    transition: background 0.3s ease-in-out;
 }
+
+header.scrolled {
+    background: rgba(141, 101, 211, 1); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 살짝 그림자 주면 더 예뻐냥! */
+}
+
 header div {
     max-width:1400px; margin:auto; 
     display: flex; justify-content: space-between;
@@ -53,8 +61,8 @@ header nav a:last-child {
     margin:0;
 }
 header nav a.active , header nav a:hover {
-    background:#64208b; border-radius:50px;
-    font-weight: 400;  color: #fff3cb; font-weight: bold;
+    background:#f7de54; border-radius:50px;
+    font-weight: 400;  color: #825ba7; font-weight: bold;
     box-shadow: 0 0 20px #f8efc981;
 }
 header button.material-symbols-outlined {
@@ -64,34 +72,58 @@ header button.material-symbols-outlined {
 
 /* 홈화면 */
 #Home {
-    background: url(../images/bg-1.jpg) no-repeat fixed center center / cover;
-    min-height:100vh; color:white;
-    padding-top:35vh;    
+    width: 100%;
+    height: 100vh;
+    /* 배경은 호시가 정한 GIF 그대로냥! */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('../images/videoCoding.gif') no-repeat center/cover;
+    
+    /* 📍 핵심: 텍스트를 화면 정가운데로 모으기 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    position: relative; /* 마우스 버튼을 바닥에 고정하는 기준점! 🐾 */
 }
+
 #Home h1 {
-    font:400 4.5rem "Roboto", sans-serif;
+    font: 400 4.5rem "Roboto", sans-serif;
     text-align: center;
+    margin: 0; /* 마진 때문에 밀리지 않게 0으로! */
+    color: #fff;
 }
-#Home h1 b.active  {
-    display:block;
-    background:rgba(101, 50, 130, 0.7); padding:8px 70px;
-    width:fit-content; margin:20px auto 50px;
-    border-radius:20px;
+
+#Home h1 b.active {
+    display: block;
+    background: rgba(101, 50, 130, 0.7); 
+    padding: 8px 70px;
+    width: fit-content; 
+    margin: 20px auto 0; /* 아래 마진은 0으로 줄였어냥! */
+    border-radius: 20px;
 }
+
 #Home h1 span {
-    color:#f7de54;
+    color: #f7de54;
 }
+
+/* 📍 핵심: 마우스 버튼을 바닥에 딱 붙이기 */
 #Home a {
-    display: block; width: fit-content; 
-    margin:auto; margin-top:20vh;
-    animation:swipe 1s infinite alternate both;    
+    position: absolute; /* '유령'처럼 띄워서 바닥에 배치해냥! */
+    bottom: 50px;      /* 바닥에서 50px 띄우기 (숫자로 정밀하게 조절!) */
+    left: 50%;
+    transform: translateX(-50%); /* 정확히 가로 정중앙 맞추기 🪄 */
+    
+    width: fit-content;
+    animation: swipe 1s infinite alternate both;    
 }
+
 @keyframes swipe {
-    from {transform:translateY(-10px);}
-    to   {transform:translateY(10px);}
+    from { transform: translate(-50%, -10px); } /* 가로 정중앙(-50%) 유지하면서 움직여냥! */
+    to   { transform: translate(-50%, 10px); }
 }
+
 #Home a img {
-    max-width:150px;
+    max-width: 100px;
 }
 
 /*About */
@@ -119,7 +151,7 @@ header button.material-symbols-outlined {
 
 #About> div:first-child div {   
     width:fit-content; margin:auto; /* border: 1px solid red; */
-    font-size:2rem; font-weight: 500; transform: translateY(-220px);
+    font-size:2rem; font-weight: 500; transform: translateY(-260px);
 }
 
 #About>div:first-child p {
@@ -318,12 +350,26 @@ header button.material-symbols-outlined {
     padding:100px 0;
 }
 #Gallery nav {
-    max-width:870px;  margin:auto; display:flex;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    background-color: #825ba7; /* 현재 노란색 배경이지냥? */
+    width: 600px; /* 혹은 호시가 설정한 너비 */
+    height: 45px;
+    margin: 20px auto;
+    border-radius: 50px;
+    overflow: hidden;
+    transform: translateY(-20px);
 }
+
 #Gallery nav button {
-    flex:1; border:1px solid #825ba7; padding:20px; 
-    text-align: center; font-weight: 500; font-size:1.2rem;
-    color:#825ba7; cursor:pointer;
+    border: none;
+    background: transparent;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.95rem;
 }
 #Gallery nav button.active , #Gallery nav button:hover {
     background:#825ba7; color:#f7de54;
@@ -372,15 +418,23 @@ header button.material-symbols-outlined {
 
 /* Contact us */
 #Contact {
-    background: #b1abcd; padding:150px 0 0;
+    /* background: #b1abcd;*/
+    background: linear-gradient(rgba(75, 61, 92, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('../images/bg-1.jpg') no-repeat center/cover;
+    padding:50px 0 0;
     text-align: center;
 }
-#Contact h2+p {
-    color:#716f70; font-weight: 500; font-size:1.1rem;
-    padding-bottom:50px;
+#Contact h2 {
+    color:#ac80d6; font-weight: 600; font-size:1.8rem;
+    padding-bottom:70px;
+}
+
+#Contact p{
+    color:#fff; font-weight: 400; font-size:0.98rem;
+    padding-bottom:70px; line-height: 180%;
 }
 #Contact form {
-    background: #8e79a2;
+    background: #8e79a26b;
     padding-bottom:30px;
 }
 #Contact form * {
@@ -390,10 +444,25 @@ header button.material-symbols-outlined {
     padding:20px 0 10px; color:white; font-weight: 500;
 }
 #Contact input, #Contact textarea {
-    background: #e0dce4; border-radius:5px;
+    background-color: #ffffffa9;
+    border-radius:3px;
     border:none; width:500px; max-width: 100%;
-    padding: 10px;
+    padding: 10px 0;
+    margin-bottom: 30px;
+
+    border: none;
+    border-bottom: 2px solid #6b149b; /* 기존 보라색 선 */
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
+
+#Contact form input:focus, #Contact form textarea:focus {
+    outline: none; 
+    border-bottom: 2px solid #f7de54; 
+    filter: drop-shadow(0 2px 5px rgba(247, 222, 84, 0.3));
+}
+
+
 #Contact ::placeholder {
     text-align: center;
 }
@@ -443,14 +512,14 @@ header button.material-symbols-outlined {
 
 /* 하단(footer) */
 footer {
-    background: #b1abcd; padding:30px 0;
+    background: #25154bbd; padding:15px 0;
 }
 footer div {
     max-width: 800px; margin: auto;
     display: flex; align-items: center;
     justify-content: space-between;
     text-align: center;
-    color:#777; font-size: 0.85rem;
+    color:#ffffff98; font-size: 0.85rem;
 }
 footer img {
     width:120px; opacity: 0.6;
