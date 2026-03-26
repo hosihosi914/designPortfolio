@@ -27,8 +27,15 @@ document.addEventListener("DOMContentLoaded" , ()=> {
     
     //스크롤 이벤트 발생부분
     window.addEventListener('scroll' , ()=> {
-      const scrollTop = document.documentElement.scrollTop ||  window.scrollY;
+      const header = document.querySelector('header');
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
+      if (scrollTop > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
       //초기 위치 [Home]
       let activeIndex = 0;
 
