@@ -423,6 +423,7 @@ header button.material-symbols-outlined {
                 url('../images/bg-1.jpg') no-repeat center/cover;
     padding:50px 0 0;
     text-align: center;
+    height: 100vh;
 }
 #Contact h2 {
     color:#ac80d6; font-weight: 600; font-size:1.8rem;
@@ -512,17 +513,38 @@ header button.material-symbols-outlined {
 
 /* 하단(footer) */
 footer {
-    background: #25154bbd; padding:15px 0;
+    opacity: 0;
+    visibility: hidden;
+    background: #25154b67;
+    transition: all 0.7s ease;
+    position: fixed;
+    width: 100vw;
+    line-height: 140%;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
+
+footer.active{
+    opacity: 1;
+    visibility: visible;
+}
+
 footer div {
-    max-width: 800px; margin: auto;
-    display: flex; align-items: center;
+    max-width: 100%;
+    margin: auto;
+    display: flex; 
     justify-content: space-between;
+    align-items: center;
     text-align: center;
-    color:#ffffff98; font-size: 0.85rem;
+    color:#ffffff98;
+    padding: 0 200px;
+    flex: 1;
 }
-footer img {
-    width:120px; opacity: 0.6;
+
+footer div p {
+    font-size: 0.85rem;
+    text-align: right;
 }
 
 /*************** 작은기계장치(아이패드미니:0 ~ 768px ) ***************/
