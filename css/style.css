@@ -53,7 +53,7 @@ header nav a:last-child {
     margin:0;
 }
 header nav a.active , header nav a:hover {
-    background:#a351d3; border-radius:50px;
+    background:#64208b; border-radius:50px;
     font-weight: 400;  color: #fff3cb; font-weight: bold;
     box-shadow: 0 0 20px #f8efc981;
 }
@@ -153,6 +153,17 @@ header button.material-symbols-outlined {
 }
 
 #About .left {flex:1;}
+
+#About .left ul li{
+    /* border: 1px solid red; */
+    width: 80%;
+    height: 80%;
+}
+
+#About .left ul li p{
+    color: #333;
+    font-size: 0.85rem;
+}
 #About .right {
     padding:50px 0 0 ; flex:1;
 }
