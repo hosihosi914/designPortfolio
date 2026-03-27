@@ -361,8 +361,10 @@ header button.material-symbols-outlined {
 
 /* Gallery */
 #Gallery {
-    background: #f1f1f1;
+    background: linear-gradient(rgba(253, 253, 253, 0.7), rgba(253, 253, 253, 0.7)), 
+                url('../images/galleryBg.png') no-repeat center/cover;
     padding:100px 0;
+    height: 100vh;
 }
 #Gallery nav {
     display: flex; 
